@@ -1,0 +1,21 @@
+{
+  "name": "sort",
+  "version": "1.0.0",
+  "description": "Typescript sorter",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently npm:start:*",
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vaggelis-Giannakosian/typescript_sorter.git"
+  },
+  "author": "Vaggelis Giannakosian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vaggelis-Giannakosian/typescript_sorter/issues"
+  },
+  "homepage": "https://github.com/Vaggelis-Giannakosian/typescript_sorter#readme"
+}
