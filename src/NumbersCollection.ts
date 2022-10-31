@@ -1,21 +1,20 @@
 export class NumbersCollection {
-    data: number []
-
-    constructor(data: number[]) {
-        this.data = data;
+    constructor(public data: number[]) {
     }
 
-    get length() : number{
+    get length(): number {
         return this.data.length;
     }
 
-    swap(i: number, j: number): void{
-        const leftElement = this.data[j];
-        this.data[j] = this.data[j + 1];
-        this.data[j + 1] = leftElement;
+    swap(leftIndex: number, rightIndex: number): void {
+        const leftElement = this.data[leftIndex];
+
+        this.data[leftIndex] = this.data[rightIndex];
+        this.data[rightIndex] = leftElement;
+        return;
     }
 
-    compare(i: number, j: number): boolean{
-        return  this.data[j] > this.data[j + 1]
+    compare(leftIndex: number, rightIndex: number): boolean {
+        return this.data[leftIndex] > this.data[rightIndex]
     }
 }
