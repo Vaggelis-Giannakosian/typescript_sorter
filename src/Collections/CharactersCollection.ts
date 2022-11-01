@@ -1,6 +1,9 @@
 import {Sortable} from "./Sortable";
+import {Sorter} from "../Sorter";
 
 export class CharactersCollection implements Sortable {
+    sorter: Sorter = new Sorter(this);
+
     constructor(public data: string) {
     }
 
@@ -21,5 +24,9 @@ export class CharactersCollection implements Sortable {
 
         this.data = characters.join('')
         return;
+    }
+
+    sort(): void {
+        this.sorter.sort();
     }
 }

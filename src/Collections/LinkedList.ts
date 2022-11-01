@@ -1,4 +1,5 @@
 import {Sortable} from "./Sortable";
+import {Sorter} from "../Sorter";
 
 class Node {
     next: Node | null = null;
@@ -8,6 +9,7 @@ class Node {
 }
 
 export class LinkedList implements Sortable {
+    sorter: Sorter = new Sorter(this);
     head: Node | null = null;
 
     add(data: number): void {
@@ -83,5 +85,9 @@ export class LinkedList implements Sortable {
 
         console.log(result);
         return;
+    }
+
+    sort(): void {
+        this.sorter.sort();
     }
 }
