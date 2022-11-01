@@ -1,4 +1,4 @@
-import {Sortable} from "./Sortable";
+import {Sortable} from "./Collections/Sortable";
 
 export class Sorter {
     constructor(public collection: Sortable) {
