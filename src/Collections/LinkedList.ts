@@ -1,4 +1,3 @@
-import {Sortable} from "./Sortable";
 import {Sorter} from "../Sorter";
 
 class Node {
@@ -8,8 +7,7 @@ class Node {
     }
 }
 
-export class LinkedList implements Sortable {
-    sorter: Sorter = new Sorter(this);
+export class LinkedList extends Sorter {
     head: Node | null = null;
 
     add(data: number): void {
@@ -30,11 +28,11 @@ export class LinkedList implements Sortable {
     get length(): number {
         if(!this.head) return 0;
 
-        let length = 0;
+        let length = 1;
         let tail = this.head;
         while (tail.next) {
-            tail = tail.next
             length++;
+            tail = tail.next
         }
 
         return length;
@@ -46,8 +44,8 @@ export class LinkedList implements Sortable {
         }
 
         let position = 0;
-        let node = this.head;
-        while (node.next) {
+        let node: Node | null = this.head;
+        while (node) {
             if(position === index) return node;
 
             node = node.next
@@ -85,9 +83,5 @@ export class LinkedList implements Sortable {
 
         console.log(result);
         return;
-    }
-
-    sort(): void {
-        this.sorter.sort();
     }
 }

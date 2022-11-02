@@ -1,10 +1,8 @@
-import {Sortable} from "./Sortable";
 import {Sorter} from "../Sorter";
 
-export class NumbersCollection implements Sortable {
-    sorter: Sorter = new Sorter(this);
-
+export class NumbersCollection extends Sorter {
     constructor(public data: number[]) {
+        super();
     }
 
     get length(): number {
@@ -21,9 +19,5 @@ export class NumbersCollection implements Sortable {
         this.data[leftIndex] = this.data[rightIndex];
         this.data[rightIndex] = leftElement;
         return;
-    }
-
-    sort(): void {
-        this.sorter.sort();
     }
 }

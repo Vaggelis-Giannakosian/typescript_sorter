@@ -9,7 +9,7 @@ numbersCollection.sort()
 console.log(numbersCollection.data)
 
 
-const charactersCollection = new CharactersCollection("cΧbdaΧ");
+const charactersCollection = new CharactersCollection("cΧbdaΧa");
 charactersCollection.sort()
 
 console.log(charactersCollection.data)
@@ -17,8 +17,9 @@ console.log(charactersCollection.data)
 
 const linkedList = new LinkedList();
 linkedList.add(5);
-linkedList.add(1);
+linkedList.add(1100);
 linkedList.add(0);
-linkedList.add(100);
+linkedList.add(1);
+
 linkedList.sort()
 linkedList.print();
